@@ -1,1 +1,17 @@
+q 1  module 13
+Problem Statement
+Write a program to calculate the area of a Triangle.
+Input
+The input consists of two integer numbers which will take the values for base and height of a triangle.
+Output
+Output will be the area which will be an integer number.
 
+
+q 2  module 13
+Celsius to Fahrenheit
+Problem Statement
+Write a program to convert temperature from Celsius to Fahrenheit.
+Input
+The input consists of a float number.
+Output
+Output will be the Fahrenheit value.
