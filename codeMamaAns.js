@@ -58,3 +58,35 @@
 //         result *=i
 //     }
 //     console.log(result)
+
+ans: 1  module 13
+function main (input) {
+    /**
+     * Write JavaScript code from here
+    */
+    // ইনপুট থেকে ভূমি এবং উচ্চতা আলাদা করা
+    const lines = input.trim().split(/\s+/);
+    const base = parseInt(lines[0], 10);
+    const height = parseInt(lines[1], 10);
+    
+    // ক্ষেত্রফল নির্ণয় (integer এ রূপান্তর করতে Math.floor ব্যবহার করা হয়েছে)
+    const area = Math.floor((base * height) / 2);
+    
+    // ফলাফল প্রিন্ট
+    console.log(area);
+}
+
+ans: 2  module 13
+function main (input) {
+    /**
+     * Write JavaScript code from here
+    */
+    // ইনপুটকে Float সংখ্যায় রূপান্তর করা
+    const celsius = parseFloat(input.trim());
+    
+    // সেলসিয়াস থেকে ফারেনহাইটে রূপান্তর
+    const fahrenheit = (celsius * 1.8) + 32;
+    
+    // ঠিক ২ ঘর দশমিক পর্যন্ত আউটপুট প্রিন্ট করা
+    console.log(fahrenheit.toFixed(2));
+}
