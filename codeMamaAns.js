@@ -78,15 +78,10 @@ function main (input) {
 
 ans: 2  module 13
 function main (input) {
-    /**
-     * Write JavaScript code from here
-    */
-    // ইনপুটকে Float সংখ্যায় রূপান্তর করা
-    const celsius = parseFloat(input.trim());
+  const values = input.trim().split(/\s+/);
+    const celsius = parseFloat(values[0]); // প্রথম ফ্লোট সংখ্যাটি সেলসিয়াস হিসেবে নেওয়া
     
-    // সেলসিয়াস থেকে ফারেনহাইটে রূপান্তর
-    const fahrenheit = (celsius * 1.8) + 32;
-    
-    // ঠিক ২ ঘর দশমিক পর্যন্ত আউটপুট প্রিন্ট করা
-    console.log(fahrenheit.toFixed(2));
+    const fahrenheit = (celsius * 9 / 5) + 32;
+    console.log(`The temperature in Fahrenheit is: ${fahrenheit.toFixed(2)}`);
 }
+
