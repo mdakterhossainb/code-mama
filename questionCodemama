@@ -15,3 +15,27 @@ Input
 The input consists of a float number.
 Output
 Output will be the Fahrenheit value.
+
+
+
+q 1  module 13
+Problem Statement
+Write a program where user will give height(height) and weight(kg) and then BMI will be calculated.
+Input
+The input consists of two double numbers which are height(meter) and weight(kg).
+Output
+*if bmi < 18.5 print "Underweight" *if bmi >= 18.5 & bmi < 25.0 print "Normal weight" *if bmi >= 25.0 & bmi < 30.0 print "Overweight" *else print "Obese"
+Constraints
+0 ≤ |S| ≤ 109
+
+
+q 2  module 14
+Is the number Prime?
+Problem Statement
+Write a program where you will be given a number. You will have to check whether the number is prime or not.
+Input
+The input consists of an integer numbers.
+Output
+The output will print whether the number is prime or not. For example, for 13 it will print "13 is a prime number." for 24 it will print "24 is not a prime number."
+Constraints
+0 ≤ |S| ≤ 109
