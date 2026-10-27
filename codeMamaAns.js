@@ -84,4 +84,39 @@ function main (input) {
     const fahrenheit = (celsius * 9 / 5) + 32;
     console.log(`The temperature in Fahrenheit is: ${fahrenheit.toFixed(2)}`);
 }
+ans: 1  module 14
+function main (input) {
+   const [height, weight] = input.trim().split(" ").map(Number);
+  const BMI = weight / (height * height);
+console.log("BMI: " + BMI.toFixed(2))
+  if (BMI < 18.5) {
+    console.log("Underweight");
+  } else if (BMI >= 18.5 && BMI < 25.0) {
+    console.log("Normal weight");
+  } else if (BMI >= 25.0 && BMI < 30.0) {
+    console.log("Overweight");
+  } else {
+    console.log("Obese");
+  }
+}
 
+
+ans: 2  module 14
+function main (input) {
+      const n = parseInt(input.trim());
+  function isPrime(num) {
+    if (num <= 1) return false;
+    if (num <= 3) return true;
+    if (num % 2 == 0 || num % 3 == 0) return false;
+    for (let i = 5; i * i <= num; i = i + 6) {
+      if (num % i == 0 || num % (i + 2) == 0) return false;
+    }
+    return true;
+  }
+
+  if (isPrime(n)) {
+    console.log(n + " is a prime number.");
+  } else {
+    console.log(n + " is not a prime number.");
+  }
+}
