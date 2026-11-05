@@ -120,3 +120,46 @@ function main (input) {
     console.log(n + " is not a prime number.");
   }
 }
+
+
+
+ans: 1  module 16
+function main (input) {
+    let result = "";
+    
+    for (let i = 0; i < input.length; i++) {
+        // ইনডেক্স ২, ৫, ৮... অর্থাৎ প্রতি ৩য় ক্যারেক্টারের ক্ষেত্রে (0-based indexing এ 2, 5, 8...)
+        if ((i + 1) % 3 === 0) {
+            result += input[i].toUpperCase();
+        } else {
+            result += input[i];
+        }
+    }
+    
+    console.log(result);
+}
+
+
+
+
+
+
+ans: 2  module 16
+function main (input) {
+    let set = new Set();
+    let left = 0;
+    let maxLength = 0;
+    
+    for (let right = 0; right < input.length; right++) {
+        // যদি ক্যারেক্টারটি ইতিমধ্যে সেটে থাকে, তবে ডুপ্লিকেট সরানোর জন্য 'left' পয়েন্টার ডানে সরাব
+        while (set.has(input[right])) {
+            set.delete(input[left]);
+            left++;
+        }
+        
+        set.add(input[right]);
+        maxLength = Math.max(maxLength, right - left + 1);
+    }
+    
+    console.log(maxLength);
+}
