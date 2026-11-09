@@ -163,3 +163,58 @@ function main (input) {
     
     console.log(maxLength);
 }
+
+
+
+
+
+
+
+
+
+
+ans: 1  module 17
+function main(input) {
+    const lines = input.trim().split(/\r?\n/);
+    if (lines.length < 2) return;
+    
+    const N = parseInt(lines[0].trim());
+    const A = lines[1].trim().split(/\s+/).map(Number);
+    
+    let count = 0;
+
+    // O(N^3) পদ্ধতি যেহেতু N <= 10^3, সরাসরি লুপ চালিয়েও করা সম্ভব, 
+    // তবে O(N^2) লজিক ব্যবহার করলে আরও দ্রুত কাজ করবে।
+    for (let i = 0; i < N; i++) {
+        for (let j = i + 1; j < N; j++) {
+            for (let k = j + 1; k < N; k++) {
+                if (A[i] + A[j] + A[k] === 0) {
+                    count++;
+                }
+            }
+        }
+    }
+
+    console.log(count);
+}
+
+
+
+ans: 2  module 17
+function main (input) {
+    let s = input.trim();
+    let result = "";
+    
+    for (let i = 0; i < s.length; i++) {
+        // যদি ক্যারেক্টারটি ইতিমধ্যেই result-এ না থাকে, তবে যোগ করব
+        if (result.indexOf(s[i]) === -1) {
+            result += s[i];
+        }
+    }
+    
+    console.log(result);
+}
+
+
+
+
