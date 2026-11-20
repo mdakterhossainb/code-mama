@@ -213,6 +213,60 @@ function main (input) {
     }
     
     console.log(result);
+
+
+
+
+
+ans: 1  module 18
+    function main(input) {
+    if (!input) return;
+
+    const tokens = input.trim().split(/\s+/);
+    let idx = 0;
+
+    const N = Number(tokens[idx++]);
+    const arr = [];
+    for (let i = 0; i < N; i++) {
+        arr.push(Number(tokens[idx++]));
+    }
+    const P = Number(tokens[idx++]);
+
+    if (N < 3) {
+        return;
+    }
+
+    // Numeric ascending sort (JS default sort lexicographical way-te sort kore, tai comparator dewa জরুরি)
+    arr.sort((a, b) => a - b);
+
+    for (let i = 0; i < N - 2; i++) {
+        const needed = P - arr[i];
+        let left = i + 1;
+        let right = N - 1;
+
+        while (left < right) {
+            const sum = arr[left] + arr[right];
+
+            if (sum === needed) {
+                console.log(`${arr[i]} ${arr[left]} ${arr[right]}`);
+                return;
+            } else if (sum < needed) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+    }
+}
+
+let input = "";
+process.stdin.on('data', (chunk) => {
+    input += chunk;
+});
+
+process.stdin.on('end', () => {
+    main(input.trim());
+});
 }
 
 
