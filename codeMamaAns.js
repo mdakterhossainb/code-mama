@@ -271,4 +271,99 @@ process.stdin.on('end', () => {
 
 
 
+ans: 1  module 19
+function main(input) {
+    const s = input.trim();
+    const stack = [];
+    const pairs = {
+        ')': '(',
+        '}': '{',
+        ']': '['
+    };
 
+    for (let i = 0; i < s.length; i++) {
+        const ch = s[i];
+
+        if (ch === '(' || ch === '{' || ch === '[') {
+            stack.push(ch);
+        } else if (ch === ')' || ch === '}' || ch === ']') {
+            if (stack.length === 0 || stack.pop() !== pairs[ch]) {
+                console.log("Brackets are not balanced.");
+                return;
+            }
+        }
+    }
+
+    if (stack.length === 0) {
+        console.log("Brackets are balanced.");
+    } else {
+        console.log("Brackets are not balanced.");
+    }
+}
+
+let input = "";
+process.stdin.on('data', (chunk) => {
+    input += chunk;
+});
+
+process.stdin.on('end', () => {
+    main(input.trim());
+});
+
+
+
+
+
+
+
+
+
+
+
+ans: 2  module 19
+function main(input) {
+    const lines = input.trim().split(/\r?\n/);
+    if (lines.length === 0 || lines[0] === "") return;
+
+    const T = parseInt(lines[0].trim(), 10);
+    let lineIndex = 1;
+
+    for (let t = 0; t < T; t++) {
+        while (lineIndex < lines.length && lines[lineIndex].trim() === "") {
+            lineIndex++;
+        }
+        if (lineIndex >= lines.length) break;
+
+        const s = lines[lineIndex].trim();
+        lineIndex++;
+
+        const freq = new Array(26).fill(0);
+
+        // প্রতিটি ক্যারেক্টারের ফ্রিকোয়েন্সি গণনা
+        for (let i = 0; i < s.length; i++) {
+            const idx = s.charCodeAt(i) - 97; // 'a' এর ASCII মান 97
+            freq[idx]++;
+        }
+
+        // বাম থেকে ডানে প্রথম যে ক্যারেক্টারের ফ্রিকোয়েন্সি 1 সেটি খুঁজে বের করা
+        let ans = 'N';
+        for (let i = 0; i < s.length; i++) {
+            const idx = s.charCodeAt(i) - 97;
+            if (freq[idx] === 1) {
+                ans = s[i];
+                break;
+            }
+        }
+
+        console.log(ans);
+    }
+}
+
+let input = "";
+process.stdin.on('data', (chunk) => {
+    input += chunk;
+});
+
+process.stdin.on('end', () => {
+    main(input.trim());
+});
